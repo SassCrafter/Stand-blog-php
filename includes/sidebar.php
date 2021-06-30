@@ -15,6 +15,7 @@
                     <div class="content">
                       <ul>
 <?php
+// Recent posts
   $recent_posts = select_recent_posts();
   while($row = mysqli_fetch_assoc($recent_posts)) {
     $recent_post_id = $row['post_id'];
@@ -37,33 +38,19 @@
                     </div>
                     <div class="content">
                       <ul>
-                        <li><a href="#">- Nature Lifestyle</a></li>
-                        <li><a href="#">- Awesome Layouts</a></li>
-                        <li><a href="#">- Creative Ideas</a></li>
-                        <li><a href="#">- Responsive Templates</a></li>
-                        <li><a href="#">- HTML5 / CSS3 Templates</a></li>
-                        <li><a href="#">- Creative &amp; Unique</a></li>
+<?php
+  $categories = get_all_categories(7);
+
+  while ($row = mysqli_fetch_assoc($categories)) {
+    $cat_id = $row['cat_id'];
+    $cat_title = ucfirst($row['cat_title']);
+    echo "<li><a href='./view_by_category.php?cat_id=$cat_id'>- $cat_title</a></li>";
+  }
+?>
                       </ul>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-12">
-                  <div class="sidebar-item tags">
-                    <div class="sidebar-heading">
-                      <h2>Tag Clouds</h2>
-                    </div>
-                    <div class="content">
-                      <ul>
-                        <li><a href="#">Lifestyle</a></li>
-                        <li><a href="#">Creative</a></li>
-                        <li><a href="#">HTML5</a></li>
-                        <li><a href="#">Inspiration</a></li>
-                        <li><a href="#">Motivation</a></li>
-                        <li><a href="#">PSD</a></li>
-                        <li><a href="#">Responsive</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+                
               </div>
             </div>

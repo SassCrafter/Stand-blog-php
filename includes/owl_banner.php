@@ -8,7 +8,6 @@
       $post_category = $row['cat_title'];
       $post_title = $row['post_title'];
       $post_author = $row['post_author'];
-      //$post_date = date_format(date_create($row['post_date']), 'Y-m-d');
       $post_date = remove_time_from_date($row['post_date']);
       $post_comments_num = $row['post_comments_count'];
       $post_image = $row['post_image'];

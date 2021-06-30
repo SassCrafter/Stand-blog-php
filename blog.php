@@ -5,7 +5,7 @@
     <!-- Page Content -->
 
     <!-- Banner Starts Here -->
-    <?php include_once './includes/owl_banner.php'; ?>
+    <?php display_banner('RECENT POSTS', 'OUR RECENT BLOG ENTRIES') ?>
 
 
     <!-- CTA -->
@@ -38,11 +38,7 @@
                   }
                 ?>
                 
-                <div class="col-lg-12">
-                  <div class="main-button">
-                    <a href="blog.php">View All Posts</a>
-                  </div>
-                </div>
+                
               </div>
             </div>
           </div>
