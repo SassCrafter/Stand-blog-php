@@ -26,6 +26,7 @@
                 <?php
                   $posts = select_recent_posts();
                   while ($row = mysqli_fetch_assoc($posts)) {
+                    $post_id = $row['post_id'];
                     $post_title = $row['post_title'];
                     $post_author = $row['post_author'];
                     $post_content = $row['post_content'];
@@ -34,7 +35,7 @@
                     $post_image = $row['post_image'];
                     $post_tags = $row['post_tags'];
                     $post_category = $row['cat_title'];
-                    echo display_post($post_title, $post_category, $post_author, $post_content, $post_date, $post_image, $post_comments_num,  $post_tags);
+                    echo display_post($post_id, $post_title, $post_category, $post_author, $post_content, $post_date, $post_image, $post_comments_num,  $post_tags);
                   }
                 ?>
                 
